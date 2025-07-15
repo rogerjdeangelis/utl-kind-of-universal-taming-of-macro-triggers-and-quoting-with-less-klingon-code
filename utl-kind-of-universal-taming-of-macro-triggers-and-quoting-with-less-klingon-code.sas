@@ -34,7 +34,7 @@ RESLV='Name: Fred'
 
 Resolve &archive but not %draft
 
-%symdel dir achive reslv / nowarn;
+%symdel dir achive reslv ans ans1/ nowarn;
 
 %let dir='D:\Data\backup&archive;2024%draft%sfx.txt';
 %let archive=ironmountain;
@@ -53,12 +53,13 @@ Resolve &archive but not %draft
        str=quote(strip(str),"'");
        call symputx('reslv',str);
     run;quit;
-    &reslv
+    %let ans=&reslv;
 ));
-
-%let ans=&reslv;
+run;quit;
 
 %put &=ans;
+
+
 
 ANS='D:\Data\backupironmountain;2024%draft%sfx.txt'
 
