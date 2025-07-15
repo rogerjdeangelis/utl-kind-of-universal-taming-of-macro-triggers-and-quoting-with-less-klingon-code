@@ -59,7 +59,7 @@ Kind of universal taming of macro triggers and quoting with less klingon code
     ));
     run;quit;
 
-    %put &=ans1;
+    %put &=ans;
 
     ANS='D:\Data\backupironmountain;2024%draft%sfx.txt'
 
