@@ -36,33 +36,34 @@ Kind of universal taming of macro triggers and quoting with less klingon code
 
     Resolve &archive but not %draft
 
-    %symdel dir achive reslv / nowarn;
+%symdel dir achive reslv ans ans1/ nowarn;
 
-    %let dir='D:\Data\backup&archive;2024%draft%sfx.txt';
-    %let archive=ironmountain;
+%let dir='D:\Data\backup&archive;2024%draft%sfx.txt';
+%let archive=ironmountain;
 
-    /*--- note ? cannot be used in a windows path ----*/
-    /*--- more clear than macro quoting           ----*/
-    /*--- more maintainable than macro quoting    ---*/
+/*--- note ? cannot be used in a windows path ----*/
+/*--- more clear than macro quoting           ----*/
+/*--- more maintainable than macro quoting    ---*/
 
-    %dosubl(%nrstr(
-        data _null_;
-           length str $255;
-           str=&dir;
-           str=translate(str,'?','%');
-           str=resolve(str);
-           str=translate(str,'%','?');
-           str=quote(strip(str),"'");
-           call symputx('reslv',str);
-        run;quit;
-        &reslv
-    ));
-
+%dosubl(%nrstr(
+    data _null_;
+       length str $255;
+       str=&dir;
+       str=translate(str,'?','%');
+       str=resolve(str);
+       str=translate(str,'%','?');
+       str=quote(strip(str),"'");
+       call symputx('reslv',str);
+    run;quit;
     %let ans=&reslv;
+));
+run;quit;
 
-    %put &=ans;
+%put &=ans1;
 
-    ANS='D:\Data\backupironmountain;2024%draft%sfx.txt'
+ANS='D:\Data\backupironmountain;2024%draft%sfx.txt'
+
+
 
 
 
