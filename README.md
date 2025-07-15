@@ -36,41 +36,32 @@ Kind of universal taming of macro triggers and quoting with less klingon code
 
     Resolve &archive but not %draft
 
-%symdel dir achive reslv ans ans1/ nowarn;
+    %symdel dir achive reslv ans ans1/ nowarn;
 
-%let dir='D:\Data\backup&archive;2024%draft%sfx.txt';
-%let archive=ironmountain;
+    %let dir='D:\Data\backup&archive;2024%draft%sfx.txt';
+    %let archive=ironmountain;
 
-/*--- note ? cannot be used in a windows path ----*/
-/*--- more clear than macro quoting           ----*/
-/*--- more maintainable than macro quoting    ---*/
+    /*--- note ? cannot be used in a windows path ----*/
+    /*--- more clear than macro quoting           ----*/
+    /*--- more maintainable than macro quoting    ---*/
 
-%dosubl(%nrstr(
-    data _null_;
-       length str $255;
-       str=&dir;
-       str=translate(str,'?','%');
-       str=resolve(str);
-       str=translate(str,'%','?');
-       str=quote(strip(str),"'");
-       call symputx('reslv',str);
+    %dosubl(%nrstr(
+        data _null_;
+           length str $255;
+           str=&dir;
+           str=translate(str,'?','%');
+           str=resolve(str);
+           str=translate(str,'%','?');
+           str=quote(strip(str),"'");
+           call symputx('reslv',str);
+        run;quit;
+        %let ans=&reslv;
+    ));
     run;quit;
-    %let ans=&reslv;
-));
-run;quit;
 
-%put &=ans1;
+    %put &=ans1;
 
-ANS='D:\Data\backupironmountain;2024%draft%sfx.txt'
-
-
-
-
-
-    %macro dequote(arg)/des='alias for %sysfunc(dequote()';
-       %qsysfunc(dequote(&arg));
-    %mend dequote;
-
+    ANS='D:\Data\backupironmountain;2024%draft%sfx.txt'
 
     3 A MORE NATURAL MACRO UNQUOTE FUNCTION
     =======================================
