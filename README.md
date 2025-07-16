@@ -44,6 +44,7 @@ Kind of universal taming of macro triggers and quoting with less klingon code
     /*--- note ? cannot be used in a windows path ----*/
     /*--- more clear than macro quoting           ----*/
     /*--- more maintainable than macro quoting    ---*/
+    /*--- runs at macro time like %unquote        ---*/
 
     %dosubl(%nrstr(
         data _null_;
