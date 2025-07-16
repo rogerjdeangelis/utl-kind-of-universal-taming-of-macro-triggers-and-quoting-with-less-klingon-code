@@ -41,7 +41,8 @@ Resolve &archive but not %draft
 
 /*--- note ? cannot be used in a windows path ----*/
 /*--- more clear than macro quoting           ----*/
-/*--- more maintainable than macro quoting    ---*/
+/*--- more maintainable than macro quoting    ----*/
+/*--- runs at macro time like %unquote        ---*/
 
 %dosubl(%nrstr(
     data _null_;
