@@ -1,0 +1,7 @@
+{
+  "bundle": "t001_dequote_vs_unquote",
+  "source_file": "utl-kind-of-universal-taming-of-macro-triggers-and-quoting-with-less-klingon-code.sas",
+  "source_blob_sha": "8eae0e1337286488d35a571cc2be989672ef3857",
+  "source_commit": "dcbc3d7647239ff9f410166c4ed42d635807df10",
+  "notes": "Section 3 of the repo file contrasts %unquote() (leaves the literal quoted text alone) with %sysfunc(dequote()) (resolves &sysdate/&systime and strips the matching quotes). Adapted verbatim as a self-contained script (no external data or macros needed); confirms Jenner resolves %sysfunc(dequote()) and a small wrapper macro the same way SAS does."
+}
