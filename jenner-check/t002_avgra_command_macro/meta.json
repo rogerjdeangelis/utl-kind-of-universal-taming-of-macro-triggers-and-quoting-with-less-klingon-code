@@ -1,0 +1,7 @@
+{
+  "bundle": "t002_avgra_command_macro",
+  "source_file": "utl-kind-of-universal-taming-of-macro-triggers-and-quoting-with-less-klingon-code.sas",
+  "source_blob_sha": "8eae0e1337286488d35a571cc2be989672ef3857",
+  "source_commit": "dcbc3d7647239ff9f410166c4ed42d635807df10",
+  "notes": "Section 7's %avgra command macro (N/Sum/Mean/StdDev/Min/Q1/Median/Q3/Max via PROC MEANS) reads its numbers from the Windows clipboard in the original (filename clp clipbrd), which only works inside the SAS classic editor. Substituted the same six sample values (1 2 3 4 5 6) the author uses in the README's own worked example, fed in via DATALINES instead of the clipboard. Macro body and PROC MEANS call are unchanged. Output matches the README's documented result exactly (N=6, Sum=21, Mean=3.5, StdDev=1.8708287)."
+}
